@@ -5,6 +5,7 @@ from tkinter import *
 from PIL import Image
 
 def main():
+    """ This function is created so it can be used in entry.py script to help in creating executable file """
 
     def MouseWheelHandler(event):
         """ This function is used to make scroll wheel functional, count is zero as at each rest point scroller is at base so to go up it needs 
