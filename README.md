@@ -2,7 +2,7 @@
 Universal Color Picker is project aimed to create a color picker tool for artist, which works on whole window (not bounded by the boundaries of software) and create a selected color pallet with their rgb, hsv and hex value.
 
 # Working 
-When the hotkey (alt+ctrl+LeftClick) is pressed, program takes screenshot of screen (_Screenshot is not saved_) while noting the position of cursor. Using pillow library program finds out the rgb value of the pixel at which cursor was pointing. With this rgb, We can easily find out hex and hsv value. This color is then displayed in pallet style in the program window with rgb, hsv and hex value. Program can hold approx 400 colors.
+When the hotkey (alt+ctrl+LeftClick) is pressed, program takes screenshot of screen (_Screenshot is not saved_) while noting the position of cursor. Using pillow library program finds out the rgb value of the pixel at which cursor was pointing. With this rgb, We can easily find out hex and hsv value. This color is then displayed in pallet style in the program window with rgb, hsv and hex value. Program can hold approx 400 colors each session. There is currently no method to save the pallet, each session starts with blank window.
 
 # Pictures
 | At Start | After Few Entries |
