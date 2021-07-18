@@ -124,7 +124,7 @@ def main():
 
         Label_Main.grid()
 
-        Label_Main.focus_displayof()
+
 
         PalletCount += 1
 
