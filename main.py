@@ -2,7 +2,46 @@
 import pyautogui
 import win32api
 from tkinter import *
+from tkinter import filedialog
 from PIL import Image
+
+def SaveAs():
+        """ This function opens a save file browser and saves file. """
+
+        # Function for opening the  browser  
+        filename = filedialog.asksaveasfile(filetypes=[("Gimp Pallet", ".gpl")], defaultextension=[("Gimp Pallet", ".gpl")]) 
+
+        # For Debugging
+        #print(filename)
+
+        SavePallet(filename)
+
+
+def SavePallet(filename):
+    """ This function is used to make entry in the newly created file after SaveAs()."""
+    try:
+        PalletName = filename.name[filename.name.rfind("/")+1:]
+        PalletName = PalletName[:len(PalletName)-4]
+        
+        # For Debugging Purpose
+        # print(PalletName)
+
+        PalletFileContent = "GIMP Palette\n"
+        PalletFileContent += "#Name: %s \n#Made with Universal Color Picker\n"%(PalletName)
+        PalletFileContent += "#Colors : %d\n"%(len(PalletList))
+
+        for i in PalletList:
+            PalletFileContent += i
+            PalletFileContent += "\n" 
+
+        PalletFile = open(filename.name, 'w')
+        PalletFile.write(PalletFileContent)
+        PalletFile.close()
+
+    except AttributeError:
+        # Error Handling for cancelling the save process
+        pass
+            
 
 def main():
 
@@ -99,6 +138,9 @@ def main():
 
         displayString = "r = %f, g = %f, b = %f \nh = %f, s = %f, v = %f \nHex Value = #"%(r, g, b, h, s, v)
         displayString += str(colorHex)
+
+        SaveString = "%f %f %f "%(r, g, b) + str(colorHex) 
+        PalletList.append(SaveString)
         
         # Creating Pallet
         
@@ -120,11 +162,10 @@ def main():
 
 
         Label_Text = Label(master = Label_Main, text=displayString)
+    
         Label_Text.grid(row = 1)
 
         Label_Main.grid()
-
-
 
         PalletCount += 1
 
@@ -141,6 +182,12 @@ def main():
     main_window.geometry("430x1000")
     main_window.title("UCP (alt+ctrl+leftClick : pick)")
 
+    global PalletList
+    PalletList = []
+
+    # Save Button
+    SaveButton = Button(master = main_window, text="Save", command = SaveAs, width = 400)
+    SaveButton.pack(side="top")
 
     # Canvas creation
     C = Canvas(master=main_window, width=400, height=100000)

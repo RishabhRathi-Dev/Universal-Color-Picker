@@ -1,8 +1,8 @@
 # About
-Universal Color Picker is project aimed to create a color picker tool for artist, which works on whole window (not bounded by the boundaries of software) and create a selected color pallet with their rgb, hsv and hex value. If you want to run this then the start script is 'entry.py'. Exe file of this project can be found in other repository with name universal color picker executables (link to repository: https://github.com/RishabhRathi-Dev/Universal-Color-Picker-Executables ) and at sourceforge whose link is provided in about section
+Universal Color Picker is project aimed to create a color picker and pallet making tool for artist. UCP aims to allow user to pick color from whole window (not bounded by the boundaries of software).
 
 # Working 
-When the hotkey (alt+ctrl+LeftClick) is pressed, program takes screenshot of screen (_Screenshot is not saved_) while noting the position of cursor. Using pillow library, program finds out the rgb value of the pixel at which cursor was pointing. With this rgb, We can easily find out hex and hsv value. This color is then displayed in pallet style on the program window with their respective rgb, hsv and hex value. Program can hold approx 400 colors each session. There is currently no method to save the pallet, each session starts with blank window.
+When the hotkey (alt+ctrl+LeftClick) is pressed, program takes screenshot of screen (_Screenshot is not saved_) while noting the position of cursor. Using pillow library program finds out the rgb value of the pixel at which cursor was pointing. With this rgb, We can easily find out hex and hsv value. This color is then displayed in pallet style in the program window with rgb, hsv and hex value. Program can hold approx 400 colors each session. You can save pallets as Gimp Pallet file by pressing the save button and use it in all compatible softwares (Looking at GIMP and Krita).
 
 # Pictures
 | At Start | After Few Entries |
